@@ -15,7 +15,7 @@ document.body.style.textAlign = "center";
 
 // Create heading
 const heading = document.createElement("h1");
-heading.textContent = "🏏 Welcome to the Cricket Experience";
+heading.textContent = "Welcome to the Cricket Experience";
 heading.style.fontSize = "2.5em";
 heading.style.textShadow = "2px 2px 8px #000";
 heading.style.marginBottom = "30px";
