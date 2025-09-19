@@ -1,37 +1,54 @@
-<form action="action_page.php">
-  <div class="container">
-    <h1>New user Register for 09:30pm DevOps with AWS, Azure, GCP, Mlops Real time training 2025 at Naresh-IT HYDERABAD </h1>
-    <p>Please fill in this form to create an account.</p>
-    <hr>
-     
-    <label for="Name"><b>Enter Name</b></label>
-    <input type="text" placeholder="Enter Full Name" name="Name" id="Name" required>
-    <br>
-    
-    <label for="mobile"><b>Enter mobile</b></label>
-    <input type="text" placeholder="Enter moible number" name="mobile" id="mobile" required>
-    <br>
+// Create and style the page dynamically
+document.body.style.margin = "0";
+document.body.style.padding = "0";
+document.body.style.height = "100%";
+document.body.style.width = "100%";
+document.body.style.fontFamily = "Arial, sans-serif";
+document.body.style.background = "url('https://assets.gqindia.com/photos/65799eb51147c91e95b7ff01/16:9/w_2560%2Cc_limit/most-searched-cricketer-of-2023_001.jpg') no-repeat center center fixed";
+document.body.style.backgroundSize = "cover";
+document.body.style.display = "flex";
+document.body.style.justifyContent = "center";
+document.body.style.alignItems = "center";
+document.body.style.flexDirection = "column";
+document.body.style.color = "white";
+document.body.style.textAlign = "center";
 
-    <label for="email"><b>Enter Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" id="email" required>
-    <br>
+// Create heading
+const heading = document.createElement("h1");
+heading.textContent = "🏏 Welcome to the Cricket Experience";
+heading.style.fontSize = "2.5em";
+heading.style.textShadow = "2px 2px 8px #000";
+heading.style.marginBottom = "30px";
+document.body.appendChild(heading);
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
-    <br>
+// Button creation helper
+function createButton(text) {
+  const button = document.createElement("button");
+  button.textContent = text;
+  button.className = "action-button";
+  button.style.width = "200px";
+  button.style.padding = "12px";
+  button.style.margin = "10px";
+  button.style.fontSize = "1em";
+  button.style.fontWeight = "bold";
+  button.style.backgroundColor = "#0047ab";
+  button.style.color = "white";
+  button.style.border = "none";
+  button.style.borderRadius = "6px";
+  button.style.cursor = "pointer";
+  button.style.transition = "background-color 0.3s ease";
 
-    <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
-    <hr>
-    <br>
-    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-    <button type="submit" class="registerbtn">Register</button>
-  </div>
-  <div class="container signin">
-    <p>Already have an account? <a href="#">Sign in</a>.</p>
-  </div>
+  button.addEventListener("mouseover", () => {
+    button.style.backgroundColor = "#003380";
+  });
 
-   <h1> Thank You, Happy Learning </h1>
-   <h1> See You Again </h1>
-  
-</form>
+  button.addEventListener("mouseout", () => {
+    button.style.backgroundColor = "#0047ab";
+  });
+
+  return button;
+}
+
+// Add buttons
+document.body.appendChild(createButton("Login"));
+document.body.appendChild(createButton("Create Account"));
