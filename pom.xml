@@ -22,11 +22,6 @@
   <sonar.login>${env.SONAR_TOKEN}</sonar.login>
 </properties>
 
-  <properties>
-    <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
-  </properties>
-
   <modules>
     <module>server</module>
     <module>webapp</module>
