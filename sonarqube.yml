@@ -3,12 +3,14 @@ name: SonarQube Maven Analysis
 on:
   push:
     branches:
-      - main
+      - '**'
   pull_request:
 
 jobs:
   sonar-analysis:
+    name: SonarQube Code Quality Check
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
       - name: Checkout code
@@ -28,7 +30,7 @@ jobs:
           restore-keys: ${{ runner.os }}-maven-
 
       - name: Run SonarQube analysis
-        run: mvn sonar:sonar
+        run: mvn clean verify sonar:sonar
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
