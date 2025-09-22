@@ -11,6 +11,17 @@
   <description>Sample Maven project with a working, deployable site.</description>
   <url>http://www.example.com</url>
 
+<properties>
+  <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
+  <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
+
+  <!-- SonarQube Integration -->
+  <sonar.projectKey>com.example.maven-project</sonar.projectKey>
+  <sonar.projectName>Maven Project</sonar.projectName>
+  <sonar.host.url>${env.SONAR_HOST_URL}</sonar.host.url>
+  <sonar.login>${env.SONAR_TOKEN}</sonar.login>
+</properties>
+
   <properties>
     <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
