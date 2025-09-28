@@ -1,18 +1,22 @@
-# Stage 1: Build the application using Maven and JDK 17
-FROM maven:3.8.4-eclipse-temurin-17 AS build
+name: Build and Deploy Docker Image
 
-WORKDIR /app
+on:
+  push:
+    branches: [ main ]
 
-COPY . .
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-RUN mvn clean package -DskipTests
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-# Stage 2: Use Tomcat runtime image with JDK 17
-FROM tomcat:9.0-jdk17
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
 
-# Copy the WAR file built in the previous stage into Tomcat's webapps directory
-COPY --from=build /app/target/*.war /usr/local/tomcat/webapps/app.war
+    - name: Build Docker image
+      run: docker build -t webapp-image .
 
-EXPOSE 8080
-
-CMD ["catalina.sh", "run"]
+    - name: Run container (optional test)
+      run: docker run --rm -p 8080:8080 webapp-image
