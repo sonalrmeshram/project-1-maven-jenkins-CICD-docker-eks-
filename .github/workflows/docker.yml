@@ -31,5 +31,5 @@ jobs:
 
     - name: Push image to Docker Hub
       run: |
-        docker tag tomcat-webapp yourdockerhubusername/tomcat-webapp:latest
-        docker push yourdockerhubusername/tomcat-webapp:latest
+        docker tag tomcat-webapp ${{ secrets.DOCKER_USERNAME }}/tomcat-webapp:latest
+        docker push ${{ secrets.DOCKER_USERNAME }}/tomcat-webapp:latest
